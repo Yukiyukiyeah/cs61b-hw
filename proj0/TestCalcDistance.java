@@ -2,7 +2,7 @@
 /**
  *  Tests calcDistance
  */
-public class TestCalcDistance {
+public class gitTestCalcDistance {
 
     /**
      *  Tests calcDistance.
