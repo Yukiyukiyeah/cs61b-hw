@@ -32,7 +32,7 @@ public class NBody{
         StdDraw.setScale(-radius,radius);
         StdDraw.clear();
 
-        // StdAudio.play("audio/2001.mid");
+        StdAudio.play("audio/2001.mid");
 
         int time = 0;
         while (time<=T){

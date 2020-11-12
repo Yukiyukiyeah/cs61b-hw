@@ -1,15 +1,12 @@
-import java.math.*;
-
 /**
- *  Tests calcForceExertedBy
+ * Created by YukiTang on $(DATE).
  */
-public class TestCalcForceExertedBy {
-
+public class TestPlanet {
     /**
-     *  Tests calcForceExertedBy.
+     *  Tests Planet.
      */
     public static void main(String[] args) {
-        checkCalcForceExertedBy();
+        checkPlanet();
     }
 
     /**
@@ -32,14 +29,16 @@ public class TestCalcForceExertedBy {
     /**
      *  Checks the Planet class to make sure calcForceExertedBy works.
      */
-    private static void checkCalcForceExertedBy() {
-        System.out.println("Checking calcForceExertedBy...");
+    private static void checkPlanet() {
+        System.out.println("Checking Planet...");
 
         Planet p1 = new Planet(1.0, 1.0, 3.0, 4.0, 5.0, "jupiter.gif");
         Planet p2 = new Planet(2.0, 1.0, 3.0, 4.0, 4e11, "jupiter.gif");
-        Planet p3 = new Planet(4.0, 5.0, 3.0, 4.0, 5.0, "jupiter.gif");
 
-        checkEquals(p1.calcForceExertedBy(p2), 133.4, "calcForceExertedBy()", 0.01);
-        checkEquals(p1.calcForceExertedBy(p3), 6.67e-11, "calcForceExertedBy()", 0.01);
+        checkEquals(p1.calcForceExertedByX(p2), 133.4, "calcForceExertedByX()", 0.01);
+        checkEquals(p2.calcForceExertedByX(p1), -133.4, "calcForceExertedByX()", 0.01);
+        checkEquals(p1.calcForceExertedByY(p2), 0.0, "calcForceExertedByY()", 0.01);
+        checkEquals(p2.calcForceExertedByY(p1), 0.0, "calcForceExertedByY()", 0.01);
     }
+
 }
