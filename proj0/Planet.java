@@ -1,7 +1,7 @@
 import java.lang.Math;
 
 public class Planet{
-    static final double G = 6.67e-11;
+    private static final double G = 6.67e-11;
 
     public double xxPos;
     public double yyPos;
