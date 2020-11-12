@@ -1,11 +1,14 @@
+import java.lang.Math;
+
 public class Planet{
+    static final double G = 6.67e-11;
+
     public double xxPos;
     public double yyPos;
     public double xxVel;
     public double yyVel;
     public double mass;
     public String imgFileName;
-    public double G = 6.67*10e-11;
 
     public Planet(double xP, double yP, double xV, double yV, double m, String img){
         xxPos = xP;
@@ -27,7 +30,7 @@ public class Planet{
     public double calcDistance(Planet p){
         double dis_x = p.xxPos - this.xxPos;
         double dis_y = p.yyPos - this.yyPos;
-        return Math.sqrt(dis_x * dis_x + dis_y*dis_y);
+        return Math.sqrt(dis_x * dis_x + dis_y * dis_y);
     }
 
     public double calcForceExertedBy(Planet p){
@@ -46,7 +49,9 @@ public class Planet{
     public double calcNetForceExertedByX(Planet[] ps){
         double res = 0;
         for (Planet p: ps){
-            res += this.calcForceExertedByX(p);
+            if (this.equals(p)!=true){
+                res += this.calcForceExertedByX(p);
+            }
         }
         return res;
     }
@@ -54,7 +59,9 @@ public class Planet{
     public double calcNetForceExertedByY(Planet[] ps){
         double res = 0;
         for (Planet p: ps){
-            res += this.calcForceExertedByY(p);
+            if (this.equals(p)!=true){
+                res += this.calcForceExertedByY(p);
+            }
         }
         return res;
     }
@@ -66,5 +73,9 @@ public class Planet{
         this.yyVel += ay * dt;
         this.xxPos += this.xxVel * dt;
         this.yyPos += this.yyVel * dt;
+    }
+
+    public void draw(){
+        StdDraw.picture(this.xxPos, this.yyPos, String.format("images/%s",this.imgFileName));
     }
 }
