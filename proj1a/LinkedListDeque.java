@@ -37,7 +37,7 @@ public class LinkedListDeque<T> {
     }
 
     public boolean isEmpty() {
-        if (size == 0){
+        if (size == 0) {
             return true;
         }
         return false;
@@ -57,7 +57,7 @@ public class LinkedListDeque<T> {
     }
 
     public T removeFirst() {
-        if (!isEmpty()){
+        if (!isEmpty()) {
             Node temp = sentinel.next;
             temp.next.prev = sentinel;
             temp.prev.next = temp.next;
@@ -68,7 +68,7 @@ public class LinkedListDeque<T> {
     }
 
     public T removeLast() {
-        if (!isEmpty()){
+        if (!isEmpty()) {
             Node temp = sentinel.prev;
             temp.prev.next = sentinel;
             sentinel.prev = temp.prev;
@@ -81,7 +81,7 @@ public class LinkedListDeque<T> {
     public T get(int index) {
         if (!isEmpty() && index >= 0 && index <= size) {
             Node temp = sentinel;
-            while (index >= 0){
+            while (index >= 0) {
                 temp = temp.next;
                 index -= 1;
             }
@@ -98,7 +98,7 @@ public class LinkedListDeque<T> {
     }
     private Node getNode(int index) {
         if (!isEmpty() && index >= 0 && index <= size) {
-            if (index == 0){
+            if (index == 0) {
                 return sentinel.next;
             }
             return getNode(index - 1).next;
