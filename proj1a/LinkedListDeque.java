@@ -1,7 +1,8 @@
 /**
  * Created by YukiTang on $(DATE).
  */
-public class LinkedListDeque<T> {
+
+public class LinkedListDeque<T>{
     private class Node{
         public T item;
         public Node next;
@@ -13,7 +14,7 @@ public class LinkedListDeque<T> {
         }
     }
 
-    private node sentinel;
+    private Node sentinel;
     private int size;
 
     public LinkedListDeque(){
