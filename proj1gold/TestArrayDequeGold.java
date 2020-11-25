@@ -5,28 +5,35 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class TestArrayDequeGold {
+    private static String message = "";
     @Test
     // @source: StudentArrayDequeLauncher
     public void testStudentArray() {
         StudentArrayDeque<Integer> studentArrayDeque = new StudentArrayDeque<>();
         ArrayDequeSolution<Integer> arrayDeque = new ArrayDequeSolution<>();
 
-        for(int i = 0; i < 10; i++) {
-            Integer randomInt = StdRandom.uniform(0, 10);
-            studentArrayDeque.addFirst(randomInt);
-            arrayDeque.addFirst(randomInt);
-            System.out.print(randomInt);
+        for(int i = 0; i < 5; i++) {
+            Integer randomInt = StdRandom.uniform(0, 5);
+            if(randomInt < 2.5) {
+                studentArrayDeque.addFirst(randomInt);
+                arrayDeque.addFirst(randomInt);
+                message += "\naddFirst(" + randomInt + ")";
+            }else{
+                studentArrayDeque.addLast(randomInt);
+                arrayDeque.addLast(randomInt);
+                message += "\naddLast(" + randomInt + ")";
+            }
         }
 
         Integer size1 = studentArrayDeque.size();
         Integer size2 = arrayDeque.size();
-        assertEquals("OhhhhNOOO! size: " + size1.toString() + "not equal to" + size2.toString(), size1, size2);
+        assertEquals(size1, size2);
 
 
-        Integer randomI = StdRandom.uniform(0, 10);
+        Integer randomI = StdRandom.uniform(0, 5);
         Integer get1 = studentArrayDeque.get(randomI);
         Integer get2 = arrayDeque.get(randomI);
-        assertEquals("Ohhhhh,NOOO!!! get: " + get1.toString() + "not equal to" + get2.toString(), get1, get2);
+        assertEquals(get1, get2);
 
         Integer remove1 = 0;
         Integer remove2 = 0;
@@ -35,12 +42,14 @@ public class TestArrayDequeGold {
             if(randomNumber < 0.5) {
                 remove1 = studentArrayDeque.removeFirst();
                 remove2 = arrayDeque.removeFirst();
-                assertEquals("OhhhhhNo!! removeFirst:" + remove1.toString() + " not equal to " + remove2.toString(), remove1, remove2);
+                message += "\nremoveFirst()";
+                assertEquals(message, remove1, remove2);
             }
             else{
                 remove1 = studentArrayDeque.removeLast();
                 remove2 = studentArrayDeque.removeLast();
-                assertEquals("OHhhhNOO!!! removeLast: " + remove1.toString() + " not equal to " + remove2.toString(), remove1, remove2);
+                message += "\nremoveLast()";
+                assertEquals(message, remove1, remove2);
             }
 
         }
