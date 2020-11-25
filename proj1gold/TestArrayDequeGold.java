@@ -47,7 +47,7 @@ public class TestArrayDequeGold {
             }
             else{
                 remove1 = studentArrayDeque.removeLast();
-                remove2 = studentArrayDeque.removeLast();
+                remove2 = arrayDeque.removeLast();
                 message += "\nremoveLast()";
                 assertEquals(message, remove1, remove2);
             }
