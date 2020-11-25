@@ -26,7 +26,8 @@ public class PalindromeFinder {
                 wordsSum.put(8, wordsSum.getOrDefault(8, 0) + 1);
             } else if (word.length() >= minLength && palindrome.isPalindrome(word, new OffByN(9))) {
                 wordsSum.put(9, wordsSum.getOrDefault(9, 0) + 1);
-            } else if (word.length() >= minLength && palindrome.isPalindrome(word, new OffByN(10))) {
+            } else if (word.length() >= minLength &&
+                    palindrome.isPalindrome(word, new OffByN(10))) {
                 wordsSum.put(10, wordsSum.getOrDefault(10, 0) + 1);
             }
         }
