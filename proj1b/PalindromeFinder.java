@@ -10,31 +10,32 @@ public class PalindromeFinder {
         HashMap<Integer, Integer> wordsSum = new HashMap<Integer, Integer>();
         while (!in.isEmpty()) {
             String word = in.readString();
-            if (word.length() >= minLength && palindrome.isPalindrome(word, new OffByN(2))) {
+            if (word.length() >= minLength
+                    && palindrome.isPalindrome(word, new OffByN(2))) {
                 wordsSum.put(2, wordsSum.getOrDefault(2, 0) + 1);
-            } else if (word.length() >= minLength &&
-                    palindrome.isPalindrome(word, new OffByN(3))) {
+            } else if (word.length() >= minLength
+                    && palindrome.isPalindrome(word, new OffByN(3))) {
                 wordsSum.put(3, wordsSum.getOrDefault(3, 0) + 1);
-            } else if (word.length() >= minLength &&
-                    palindrome.isPalindrome(word, new OffByN(4))) {
+            } else if (word.length() >= minLength
+                    && palindrome.isPalindrome(word, new OffByN(4))) {
                 wordsSum.put(4, wordsSum.getOrDefault(4, 0) + 1);
-            } else if (word.length() >= minLength &&
-                    palindrome.isPalindrome(word, new OffByN(5))) {
+            } else if (word.length() >= minLength
+                    && palindrome.isPalindrome(word, new OffByN(5))) {
                 wordsSum.put(5, wordsSum.getOrDefault(5, 0) + 1);
-            } else if (word.length() >= minLength &&
-                    palindrome.isPalindrome(word, new OffByN(6))) {
+            } else if (word.length() >= minLength
+                    && palindrome.isPalindrome(word, new OffByN(6))) {
                 wordsSum.put(6, wordsSum.getOrDefault(6, 0) + 1);
-            } else if (word.length() >= minLength &&
-                    palindrome.isPalindrome(word, new OffByN(7))) {
+            } else if (word.length() >= minLength
+                    && palindrome.isPalindrome(word, new OffByN(7))) {
                 wordsSum.put(7, wordsSum.getOrDefault(7, 0) + 1);
-            } else if (word.length() >= minLength &&
-                    palindrome.isPalindrome(word, new OffByN(8))) {
+            } else if (word.length() >= minLength
+                    && palindrome.isPalindrome(word, new OffByN(8))) {
                 wordsSum.put(8, wordsSum.getOrDefault(8, 0) + 1);
-            } else if (word.length() >= minLength &&
-                    palindrome.isPalindrome(word, new OffByN(9))) {
+            } else if (word.length() >= minLength
+                    && palindrome.isPalindrome(word, new OffByN(9))) {
                 wordsSum.put(9, wordsSum.getOrDefault(9, 0) + 1);
-            } else if (word.length() >= minLength &&
-                    palindrome.isPalindrome(word, new OffByN(10))) {
+            } else if (word.length() >= minLength
+                    && palindrome.isPalindrome(word, new OffByN(10))) {
                 wordsSum.put(10, wordsSum.getOrDefault(10, 0) + 1);
             }
         }
