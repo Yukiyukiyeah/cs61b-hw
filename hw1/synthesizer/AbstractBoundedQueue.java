@@ -3,7 +3,7 @@ package synthesizer;
 /**
  * Created by YukiTang on $(DATE).
  */
-abstract public class AbstractBoundedQueue<T> implements BoundedQueue<T> {
+public abstract class AbstractBoundedQueue<T> implements BoundedQueue<T> {
     protected int fillCount;
     protected int capacity;
 
